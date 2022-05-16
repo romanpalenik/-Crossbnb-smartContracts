@@ -18,6 +18,7 @@ contract Crossbnb {
 
   mapping (uint => Offer) public offers;
   uint public offerCount = 0;
+  
 
 
   function createOffer(uint tokenId, uint price, string calldata paymentToken, string calldata adressToSendTokens) public {
