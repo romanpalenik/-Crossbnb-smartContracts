@@ -1,7 +1,7 @@
 const Migrations = artifacts.require("Migrations");
-const Crossbnb = artifacts.require("Crossbnb");
+const Minter = artifacts.require("TokenMinter");
 
 module.exports = function (deployer) {
   deployer.deploy(Migrations);
-  deployer.deploy(Crossbnb);
+  deployer.deploy(Minter);
 };
