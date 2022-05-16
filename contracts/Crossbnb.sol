@@ -13,16 +13,17 @@ contract Crossbnb {
     uint256 occupiedOfferFrom;
     uint256 occupiedOfferTo;
     address occupiedOfferByUser;
+    string adressToSendTokens;
   }
 
   mapping (uint => Offer) public offers;
   uint public offerCount = 0;
 
 
-  function createOffer(uint tokenId, uint price, string calldata paymentToken) public {
+  function createOffer(uint tokenId, uint price, string calldata paymentToken, string calldata adressToSendTokens) public {
     require(tokenId > 0);
     require(price > 0);
-    offers[offerCount] = Offer(offerCount, msg.sender, tokenId, price, paymentToken, "created", 0, 0, msg.sender);
+    offers[offerCount] = Offer(offerCount, msg.sender, tokenId, price, paymentToken, "created", 0, 0, msg.sender, adressToSendTokens);
     offerCount++;
   }
 
